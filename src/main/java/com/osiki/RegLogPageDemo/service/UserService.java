@@ -37,4 +37,8 @@ public class UserService {
 
         }
     }
+
+    public UserModel authenticate(String login, String password){
+        return userRepository.findByLoginAndPassword(login, password).orElse(null);
+    }
 }
